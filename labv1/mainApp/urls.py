@@ -8,7 +8,7 @@ urlpatterns = [
     path('chain_of_custody/', chain_of_custody,),
     path('chain_of_custody_form/', chain_of_custody_form, name ="Chain of Custody"),
     path('SampleIntakelog/', SampleIntakelog),
-    path('SampleIntakeForm/', SampleIntakeForm),
+    path('SampleIntakeForm/', SampleIntakeForm, name='SampleIntakeForm'),
     path('SampleTrackingLog/', SampleTrackingLog),
     path('SampleTrackingForm/', SampleTrackingForm),
     path('SampleRetainLog/', SampleRetainLog),

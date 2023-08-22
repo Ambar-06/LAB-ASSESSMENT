@@ -60,7 +60,28 @@ Sample Intake Log (FO-043)
                </tr>
             </thead>
             <tbody>
-               <tr>
+            {% for items in sample_list %}
+               <tr data-id="table_rows">
+                     <td class="p-2">{{ items.Default_Id }}</td>
+                     <td class="p-2">{{ items.Date }}</td>
+                     <td class="p-2">{{ items.SampleId }}</td>
+                     <td class="p-2">{{ items.SampleName }}</td>
+                     <td class="p-2">{{ items.Matrix }}</td>
+                     <td class="p-2">{{ items.BatchNumber }}</td>
+                     <td class="p-2">{{ items.SampleSize }}</td>
+                     <td class="p-2">{{ items.BatchSize }}</td>
+                     <td class="p-2">{{ items.DistributorName }}</td>
+                     <td class="p-2">{{ items.DistributorLicence }}</td>
+                     <td class="p-2">{{ items.CustodyNumber }}</td>
+                     {% comment %} {% if items is not None %}
+                     <td class="text-end p-2">{{ items }}</td>
+                     {% else %} {% endcomment %}
+                     {% comment %} <td class="text-end p-2"></td>
+                     {% endif %} {% endcomment %}
+                     <td> <a href="\SampleIntakeForm"><button class="white-button"><i class="fa fa-edit"></i></button></a></td>
+               </tr>
+               {% endfor %}
+               {% comment %} <tr>
                   <td>1</td>
                   <td>08/19/2023</td>
                   <td>062223-001</td>
@@ -199,21 +220,7 @@ Sample Intake Log (FO-043)
                   <td>Lwtrwrw-121314</td>
                   <td>10</td>
                   <td> <a href="\SampleIntakeForm"><button class="white-button"><i class="fa fa-edit"></i></button></a></td>
-               </tr>
-               <tr>
-                  <td>1</td>
-                  <td>08/19/2023</td>
-                  <td>062223-001</td>
-                  <td>Turpentine Oil</td>
-                  <td>kiv</td>
-                  <td>hdsgds-25225</td>
-                  <td>30</td>
-                  <td>61</td>
-                  <td>Toranto Chemical</td>
-                  <td>Lwtrwrw-121314</td>
-                  <td>10</td>
-                  <td> <a href="\SampleIntakeForm"><button class="white-button"><i class="fa fa-edit"></i></button></a></td>
-               </tr>
+               </tr> {% endcomment %}
             </tbody>
          </table>
          <!------------------------------End of Table Data------------------------------------------>
